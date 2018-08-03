@@ -14,7 +14,7 @@ use App\Product;
 */
 
 Route::get('/', function () {
-    $products = Product::all();
+    $products = Product::paginate(9);
     return view('welcome')->with(compact('products'));
 });
 
